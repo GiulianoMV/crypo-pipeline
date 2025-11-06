@@ -1,0 +1,12 @@
+# Ignore log and test files
+data/logs/*.txt
+notebooks/*.csv
+
+# Ignore IDE/OS specific files
+.vscode/
+
+# Ignore .venv
+.venv
+
+# Ignore planning.txt
+planning.txt
