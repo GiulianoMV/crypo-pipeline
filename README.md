@@ -84,7 +84,7 @@ crypto_pipeline/
 
 ### Clonar o repositório
 ```bash
-git clone https://github.com/<user>/crypto-pipeline.git
+git clone https://github.com/GiulianoMV/crypto-pipeline.git
 cd crypto-pipeline
 ```
 
