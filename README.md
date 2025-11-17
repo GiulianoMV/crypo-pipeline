@@ -24,7 +24,6 @@ Extrair e processar dados de ativos financeiros (ações, ETFs, criptomoedas e s
 - **yfinance** – Extração de dados do Yahoo Finance
 - **PyYAML** – Gerenciamento de configurações *(em desenvolvimento)*
 - **matplotlib / plotly** – Visualização de dados *(em desenvolvimento)*
-- **psycopg2 / SQLAlchemy** – Integração com PostgreSQL *(planejado)*
 - **pytest** – Testes automatizados *(em desenvolvimento)*
 - **Telegram API / SMTP** – Notificações *(em desenvolvimento)*
 
@@ -75,7 +74,7 @@ crypto_pipeline/
 - Resumo indicando quais indicadores apontam sinal de compra ou venda.
 
 5. Persistência de dados
-- Integração com PostgreSQL para histórico consolidado.
+- Histórico consolidado via arquivos parquet devido a baixa complexidade de dados.
 - Suporte futuro a particionamento de tabelas por ativo.
 
 ---
@@ -84,7 +83,7 @@ crypto_pipeline/
 
 ### Clonar o repositório
 ```bash
-git clone https://github.com/<user>/crypto-pipeline.git
+git clone https://github.com/GiulianoMV/crypto-pipeline.git
 cd crypto-pipeline
 ```
 
@@ -129,7 +128,7 @@ O pipeline irá gerar gráficos e enviar relatórios automáticos via Telegram e
 |---|---|---|
 |Extract|Coleta de dados via yfinance|✅ Concluído|
 |Transform|Cálculo de indicadores técnicos|✅ Concluído|
-|Load|Persistência em banco PostgreSQL|🔄 Em testes|
+|Load|Persistência de dados via parquet|🔄 MVP OK|
 |Visualization|Gráficos e relatórios visuais|🔄 Em desenvolvimento|
 |Notifications|Envio via Telegram e E-mail|🔄 Em desenvolvimento|
 |Testes de integração|Cobertura de pipeline completo|🔜 Planejado|
