@@ -46,8 +46,6 @@ crypto_pipeline/
 │   └── utils/ # Funções auxiliares e validações
 │
 ├── config/ # Parâmetros de execução e credenciais
-├── notebooks/
-│   └── eda.ipynb # Notebook para testes e validações
 │
 ├── tests/ # Testes unitários e de integração
 └── run_pipeline.py # Script principal

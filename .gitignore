@@ -1,6 +1,6 @@
 # Ignore log and test files
 data/logs/*.txt
-notebooks/*.csv
+notebooks/
 
 # Ignore IDE/OS specific files
 .vscode/
