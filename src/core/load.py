@@ -4,7 +4,7 @@ import shutil
 import sys
 import os
 
-from logger import get_logger
+from src.logger import get_logger
 
 
 logger = get_logger(__name__)
@@ -31,7 +31,7 @@ def save_table(df:pl.DataFrame, path:str):
         sys.exit(1)
 
 
-def save_chat(figure:go.Figure, path:str, chart_name:str=None, format:str='png', dpi:int=300):
+def save_chart(figure:go.Figure, path:str, chart_name:str=None, format:str='png', dpi:int=300):
     '''
     Salva gráficos gerados pelo plotly.
 

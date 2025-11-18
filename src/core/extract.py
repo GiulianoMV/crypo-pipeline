@@ -62,7 +62,7 @@ def download_asset_data(symbol:str, period:str="3mo") -> pl.DataFrame:
         logger.error('[!] Algo deu errado no download dos dados.', exc_info=True)
         out_error()
 
-def preformat_data(data:pl.DataFrame, symbol:str) -> pl.DataFrame:
+def preformat_data(data:pl.DataFrame, symbol:str=None) -> pl.DataFrame:
     '''
         Pré-processamento de dados antes do export.
     '''
@@ -72,6 +72,8 @@ def preformat_data(data:pl.DataFrame, symbol:str) -> pl.DataFrame:
         mapping_rename = {}
         for col in data.columns:
             new_colname = col.split('_')[0]
+            if not symbol and len(col.split('_'))>1:
+                symbol = col.split('_')[1]
             mapping_rename[col] = new_colname
         data = data.rename(mapping_rename)
         logger.info('[+] Mapping e rename de colunas concluído.')
@@ -88,7 +90,7 @@ def preformat_data(data:pl.DataFrame, symbol:str) -> pl.DataFrame:
             pl.col('high'),
             pl.col('low'),
             pl.col('close'),
-            pl.col('symbol')
+            pl.col('volume')
         ).sort('date', descending=True)
         logger.info('[+] Adicionado coluna "symbol" e ordenado tabela de dados por data.')
 

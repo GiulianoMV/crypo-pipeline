@@ -1,9 +1,9 @@
 # Ignore log and test files
-data/logs/*.txt
-notebooks/
+logs/
 
 # Ignore IDE/OS specific files
 .vscode/
+__pycache__
 
 # Ignore .venv
 .venv
