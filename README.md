@@ -21,7 +21,7 @@ Extrair e processar dados de ativos financeiros (ações, ETFs, criptomoedas e s
 - **Polars** – Manipulação de dados em alta performance
 - **yfinance** – Extração de dados do Yahoo Finance
 - **PyYAML** – Gerenciamento de configurações *(em desenvolvimento)*
-- **matplotlib / plotly** – Visualização de dados *(em desenvolvimento)*
+- **matplotlib / plotly** – Visualização de dados
 - **pytest** – Testes automatizados *(em desenvolvimento)*
 - **Telegram API / SMTP** – Notificações *(em desenvolvimento)*
 
