@@ -5,9 +5,7 @@
 ![Status](https://img.shields.io/badge/status-Em%20Desenvolvimento-yellow.svg)
 ![Tests](https://img.shields.io/badge/tests-Pytest-orange.svg)
 
-Pipeline **ETL** desenvolvido em **Python** para **extração, transformação e análise de ativos financeiros**, com o objetivo de demonstrar boas práticas em **engenharia de dados**, **automação de análises técnicas** e **integração com serviços externos**.
-
-Atualmente, o projeto contempla as etapas de **extração** e **transformação**, com testes e visualizações em desenvolvimento via Jupyter Notebook.
+Pipeline **ETL** desenvolvido em **Python** para **extração, transformação e análise de ativos financeiros**.
 
 ---
 
@@ -23,7 +21,7 @@ Extrair e processar dados de ativos financeiros (ações, ETFs, criptomoedas e s
 - **Polars** – Manipulação de dados em alta performance
 - **yfinance** – Extração de dados do Yahoo Finance
 - **PyYAML** – Gerenciamento de configurações *(em desenvolvimento)*
-- **matplotlib / plotly** – Visualização de dados *(em desenvolvimento)*
+- **matplotlib / plotly** – Visualização de dados
 - **pytest** – Testes automatizados *(em desenvolvimento)*
 - **Telegram API / SMTP** – Notificações *(em desenvolvimento)*
 
@@ -31,7 +29,7 @@ Extrair e processar dados de ativos financeiros (ações, ETFs, criptomoedas e s
 
 ## Estrutura do Projeto
 ```
-crypto_pipeline/
+finpipe/
 │
 ├── data/
 │   ├── raw/ # Dados brutos obtidos da API
@@ -81,8 +79,8 @@ crypto_pipeline/
 
 ### Clonar o repositório
 ```bash
-git clone https://github.com/GiulianoMV/crypto-pipeline.git
-cd crypto-pipeline
+git clone https://github.com/GiulianoMV/finpipe.git
+cd finpipe
 ```
 
 ### Criar e ativar o ambiente virtual
