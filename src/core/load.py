@@ -20,15 +20,15 @@ def save_table(df:pl.DataFrame, path:str):
     path: Caminho completo para salvar df
     '''
     try:
-        logger.info('[>>] Começando processo de salvamento de tabela.')
+        logger.info('[>>] Salvando tabela.')
         os.makedirs(path, exist_ok=True)
         df.write_parquet(path)
         logger.info(f'[+] Tabela salva em "{path}"')
-        logger.info('[<<] Finalizado processo de salvamento de tabela.')
-        sys.exit(0)
+        logger.info('[<<] Encerrando processo.')
+        return True
     except Exception:
         logger.error('[!] Erro apresentado durante salvamento de tabela.', exc_info=True)
-        sys.exit(1)
+        raise
 
 
 def save_chart(figure:go.Figure, path:str, chart_name:str=None, format:str='png', dpi:int=300):
@@ -44,15 +44,23 @@ def save_chart(figure:go.Figure, path:str, chart_name:str=None, format:str='png'
     dpi: Resolução para formatos raster
     '''
     try:
-        logger.info('[>>] Começando processo de salvamento do chart.')
+        logger.info('[>>] Salvando chart.')
         os.makedirs(path, exist_ok=True)
 
-        if format.lower() in ['html', 'htm']:
-            figure.write_html(path)
+        if chart_name:
+            filename = f'{chart_name}.{format}'
         else:
-            figure.write_image(path, format=format, scale=dpi/100)
+            filename = f'chart.{format}'
+
+        full_path = os.path.join(path, filename)
+
+        if format.lower()in ['html', 'htm']:
+            figure.write_html(full_path)
+        else:
+            figure.write_image(file=full_path, format=format, scale=dpi/100)
         logger.info(f'[+] Chart salvo em "{path}')
-        sys.exit(0)
+        logger.info('[<<] Encerrando processo.')
+        return True
     except Exception:
         logger.error('[!] Erro apresentado durante salvamento do chart.', exc_info=True)
-        sys.exit(1)
+        raise
